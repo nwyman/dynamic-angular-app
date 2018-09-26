@@ -9,6 +9,18 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <noscript id="appContent">
+    <router-outlet></router-outlet>
+    <app-page href="test" [defaultPath]="true">
+      <app-test-component></app-test-component>
+    </app-page>
+  </noscript>
+
+  <script>
+    var mainTemplate = document.getElementById('appContent');
+    window.mainTemplate = mainTemplate.innerText;
+  </script>
+
   <app-root></app-root>
 </body>
 </html>
